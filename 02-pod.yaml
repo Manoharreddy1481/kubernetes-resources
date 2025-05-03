@@ -4,5 +4,6 @@ metadata:
   name: nginx
   namespace: expense
 spec:
-- name: nginx
-  image: nginx
+  containers:
+  - name: nginx
+    image: nginx
