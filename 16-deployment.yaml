@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: manohar1481/frontend:v1
+        image: manohar1481/backend:v1
 ---
 apiVersion: v1 
 kind: Service
