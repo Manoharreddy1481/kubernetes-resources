@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport-serice
+spec:
+  type: NodePort 
+  selector:
+    project: expense
+    module: backend
+    environment: dev
+  ports:
+  - name: nodeport
+    protocol: TCP
+    port: 80
+    targetPort: 80
+    
+
