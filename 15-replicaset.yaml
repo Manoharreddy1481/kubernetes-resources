@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+    tier: frontned
+spec:
+  replicas: 3
+  selector:
+    matchLables:
+      app: nginx
+      tier: frontned
+  template:
+    metadata:
+      name: nginx
+      labels: 
+        app: nginx
+        tier: frontned
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+---
+apiVersion: v1 
+kind: Service
+metadata:
+  name: nginx
+spec:
+  selector:
+    app: nginx
+    tier: frontned
+  ports:
+  - name: nginx-svc-port
+    protocol: TCP
+    port: 80
+    targetPort: 80
+        
