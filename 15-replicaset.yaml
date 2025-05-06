@@ -31,7 +31,7 @@ spec:
     app: nginx
     tier: frontned
   ports:
-  - name: nginx-svc-port
+  - name: nginx-port
     protocol: TCP
     port: 80
     targetPort: 80
